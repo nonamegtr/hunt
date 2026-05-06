@@ -1,0 +1,156 @@
+// Curated Nasdaq tickers in three thematic baskets, all historically <$1.50.
+
+export type Category = "ai" | "biotech" | "ev";
+
+export type CategoryMeta = {
+  id: Category;
+  label: string;
+  thesis: string;
+  badge: string;
+  accent: string;
+};
+
+export const CATEGORIES: Record<Category, CategoryMeta> = {
+  ai: { id: "ai", label: "AI Infrastructure", thesis: "Technology-based · chip & AI-platform startups", badge: "AI", accent: "#a78bfa" },
+  biotech: { id: "biotech", label: "Healthcare", thesis: "Demographic tailwind · mRNA, genomics, biotech", badge: "BIO", accent: "#34d399" },
+  ev: { id: "ev", label: "Clean Energy", thesis: "Policy locked-in · EV, battery, charging", badge: "EV", accent: "#fbbf24" },
+};
+
+export type CategorizedTicker = { symbol: string; category: Category; subtheme: string };
+
+export const TICKERS: CategorizedTicker[] = [
+  // AI INFRASTRUCTURE / CHIP STARTUPS
+  { symbol: "BBAI", category: "ai", subtheme: "AI analytics platform" },
+  { symbol: "GFAI", category: "ai", subtheme: "Computer vision AI" },
+  { symbol: "AGFY", category: "ai", subtheme: "AI ag-tech" },
+  { symbol: "AISP", category: "ai", subtheme: "Edge AI / video" },
+  { symbol: "HOLO", category: "ai", subtheme: "Holographic AI" },
+  { symbol: "WIMI", category: "ai", subtheme: "Holographic AI" },
+  { symbol: "MARK", category: "ai", subtheme: "AI media / data" },
+  { symbol: "DATS", category: "ai", subtheme: "AI messaging" },
+  { symbol: "VERB", category: "ai", subtheme: "AI commerce" },
+  { symbol: "MGRX", category: "ai", subtheme: "AI healthtech" },
+  { symbol: "MLGO", category: "ai", subtheme: "Big-data analytics" },
+  { symbol: "MDAI", category: "ai", subtheme: "Medical AI" },
+  { symbol: "QMCO", category: "ai", subtheme: "AI data infrastructure" },
+  { symbol: "LASE", category: "ai", subtheme: "Photonics / chip mfg" },
+  { symbol: "RGTI", category: "ai", subtheme: "Quantum computing" },
+  { symbol: "QUBT", category: "ai", subtheme: "Quantum tech" },
+  { symbol: "MRAI", category: "ai", subtheme: "AI vision" },
+  { symbol: "POAI", category: "ai", subtheme: "Predictive oncology AI" },
+  { symbol: "MOBX", category: "ai", subtheme: "AI mobility" },
+  { symbol: "CXAI", category: "ai", subtheme: "Workplace AI" },
+  { symbol: "CETX", category: "ai", subtheme: "AI hardware" },
+  { symbol: "DRCT", category: "ai", subtheme: "AI ad-tech" },
+  { symbol: "GROM", category: "ai", subtheme: "AI media" },
+  { symbol: "BTBT", category: "ai", subtheme: "Crypto / AI compute" },
+  { symbol: "KOPN", category: "ai", subtheme: "AR / micro-displays" },
+  { symbol: "KULR", category: "ai", subtheme: "Battery + AI thermal" },
+  { symbol: "PRSO", category: "ai", subtheme: "5G + AI silicon" },
+  { symbol: "RCAT", category: "ai", subtheme: "Drone AI" },
+  { symbol: "ZJYL", category: "ai", subtheme: "AI medical" },
+  { symbol: "INM",  category: "ai", subtheme: "AI bio computing" },
+
+  // HEALTHCARE / mRNA · GENOMICS · BIOTECH
+  { symbol: "OCGN", category: "biotech", subtheme: "Gene therapy" },
+  { symbol: "INO",  category: "biotech", subtheme: "DNA medicine" },
+  { symbol: "MRNS", category: "biotech", subtheme: "Neurology biotech" },
+  { symbol: "PHIO", category: "biotech", subtheme: "RNAi platform" },
+  { symbol: "NRBO", category: "biotech", subtheme: "Neurology / metabolic" },
+  { symbol: "ENVB", category: "biotech", subtheme: "Psychedelic biotech" },
+  { symbol: "VYNE", category: "biotech", subtheme: "Dermatology" },
+  { symbol: "CYCC", category: "biotech", subtheme: "Oncology" },
+  { symbol: "DRMA", category: "biotech", subtheme: "Dermatology" },
+  { symbol: "KALA", category: "biotech", subtheme: "Eye disease" },
+  { symbol: "KPRX", category: "biotech", subtheme: "Allergy biotech" },
+  { symbol: "PALI", category: "biotech", subtheme: "Hormone therapy" },
+  { symbol: "ELYM", category: "biotech", subtheme: "Neurology biotech" },
+  { symbol: "HEPA", category: "biotech", subtheme: "Liver disease" },
+  { symbol: "IMNN", category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "IMRX", category: "biotech", subtheme: "Genomic medicine" },
+  { symbol: "JAGX", category: "biotech", subtheme: "GI biotech" },
+  { symbol: "ONCY", category: "biotech", subtheme: "Oncolytic virus" },
+  { symbol: "ONCS", category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "ONCO", category: "biotech", subtheme: "Oncology" },
+  { symbol: "AGEN", category: "biotech", subtheme: "Cancer immunotherapy" },
+  { symbol: "ATAI", category: "biotech", subtheme: "Mental-health biotech" },
+  { symbol: "BFRG", category: "biotech", subtheme: "Frequency therapeutics" },
+  { symbol: "CDIO", category: "biotech", subtheme: "Cardio diagnostics" },
+  { symbol: "CHEK", category: "biotech", subtheme: "Diagnostics" },
+  { symbol: "CLNN", category: "biotech", subtheme: "Neuroscience biotech" },
+  { symbol: "CMRX", category: "biotech", subtheme: "Antiviral biotech" },
+  { symbol: "CVKD", category: "biotech", subtheme: "Cardiovascular" },
+  { symbol: "CYAN", category: "biotech", subtheme: "Polymer therapeutics" },
+  { symbol: "EVAX", category: "biotech", subtheme: "Plant-based vaccines" },
+  { symbol: "EVOK", category: "biotech", subtheme: "GI biotech" },
+  { symbol: "EYEN", category: "biotech", subtheme: "Ophthalmics" },
+  { symbol: "FBLG", category: "biotech", subtheme: "Adolescent biotech" },
+  { symbol: "FGEN", category: "biotech", subtheme: "Anemia / cancer" },
+  { symbol: "GENE", category: "biotech", subtheme: "Genomics" },
+  { symbol: "GLMD", category: "biotech", subtheme: "Liver disease" },
+  { symbol: "GTBP", category: "biotech", subtheme: "Cancer therapy" },
+  { symbol: "IBIO", category: "biotech", subtheme: "Plant-based vaccines" },
+  { symbol: "ICCT", category: "biotech", subtheme: "Cancer biotech" },
+  { symbol: "INBS", category: "biotech", subtheme: "Diagnostics" },
+  { symbol: "INVO", category: "biotech", subtheme: "Fertility" },
+  { symbol: "IPHA", category: "biotech", subtheme: "Immuno-oncology" },
+  { symbol: "LIXT", category: "biotech", subtheme: "Cancer biotech" },
+  { symbol: "LQDA", category: "biotech", subtheme: "Pulmonary" },
+  { symbol: "LUNG", category: "biotech", subtheme: "Pulmonary biotech" },
+  { symbol: "MBRX", category: "biotech", subtheme: "Oncology" },
+  { symbol: "MIRA", category: "biotech", subtheme: "Pain biotech" },
+  { symbol: "NCNA", category: "biotech", subtheme: "Cancer biotech" },
+  { symbol: "NRSN", category: "biotech", subtheme: "Neurology biotech" },
+  { symbol: "NRXP", category: "biotech", subtheme: "Psychiatry biotech" },
+  { symbol: "ORMP", category: "biotech", subtheme: "Oral insulin" },
+  { symbol: "OTLK", category: "biotech", subtheme: "Ophthalmics" },
+  { symbol: "PASG", category: "biotech", subtheme: "Gene therapy" },
+  { symbol: "PSTV", category: "biotech", subtheme: "Targeted oncology" },
+  { symbol: "QURE", category: "biotech", subtheme: "Gene therapy" },
+  { symbol: "RNAZ", category: "biotech", subtheme: "RNA therapeutics" },
+  { symbol: "SILO", category: "biotech", subtheme: "Psychedelic biotech" },
+  { symbol: "TNXP", category: "biotech", subtheme: "Specialty pharma" },
+  { symbol: "TOVX", category: "biotech", subtheme: "Cancer biotech" },
+  { symbol: "VTGN", category: "biotech", subtheme: "Mental health" },
+  { symbol: "ZYNE", category: "biotech", subtheme: "Cannabinoid biotech" },
+
+  // CLEAN ENERGY · EV / BATTERY
+  { symbol: "MULN", category: "ev", subtheme: "EV manufacturer" },
+  { symbol: "FFIE", category: "ev", subtheme: "Luxury EV" },
+  { symbol: "GOEV", category: "ev", subtheme: "EV vans" },
+  { symbol: "NKLA", category: "ev", subtheme: "Hydrogen trucks" },
+  { symbol: "ADN",  category: "ev", subtheme: "EV charging" },
+  { symbol: "BLNK", category: "ev", subtheme: "EV charging" },
+  { symbol: "WKHS", category: "ev", subtheme: "Electric trucks" },
+  { symbol: "SOLO", category: "ev", subtheme: "Electric vehicles" },
+  { symbol: "SLDP", category: "ev", subtheme: "Solid-state battery" },
+  { symbol: "MVST", category: "ev", subtheme: "Battery cells" },
+  { symbol: "FCEL", category: "ev", subtheme: "Hydrogen fuel cells" },
+  { symbol: "PLUG", category: "ev", subtheme: "Hydrogen / fuel cells" },
+  { symbol: "GEVO", category: "ev", subtheme: "Sustainable fuels" },
+  { symbol: "AMPS", category: "ev", subtheme: "Solar / lithium" },
+  { symbol: "NWTN", category: "ev", subtheme: "Premium EV" },
+  { symbol: "ZAPP", category: "ev", subtheme: "Electric scooters" },
+  { symbol: "ENVX", category: "ev", subtheme: "Silicon battery" },
+  { symbol: "DFLI", category: "ev", subtheme: "Lithium batteries" },
+  { symbol: "PEGY", category: "ev", subtheme: "Solar / clean energy" },
+  { symbol: "SUNW", category: "ev", subtheme: "Solar" },
+  { symbol: "ESGL", category: "ev", subtheme: "Battery recycling" },
+  { symbol: "REE",  category: "ev", subtheme: "EV platform" },
+  { symbol: "FREY", category: "ev", subtheme: "Battery cells" },
+  { symbol: "HYZN", category: "ev", subtheme: "Hydrogen trucks" },
+  { symbol: "ISUN", category: "ev", subtheme: "Solar EV solutions" },
+  { symbol: "OPTT", category: "ev", subtheme: "Wave / ocean energy" },
+  { symbol: "EOSE", category: "ev", subtheme: "Zinc battery" },
+  { symbol: "RIDE", category: "ev", subtheme: "Electric trucks" },
+  { symbol: "CENN", category: "ev", subtheme: "EV / China" },
+  { symbol: "AYRO", category: "ev", subtheme: "Light EVs" },
+  { symbol: "CBAT", category: "ev", subtheme: "Lithium batteries" },
+  { symbol: "NAAS", category: "ev", subtheme: "EV charging / China" },
+];
+
+export const NASDAQ_PENNY_TICKERS: string[] = TICKERS.map((t) => t.symbol);
+
+export const TICKER_MAP: Record<string, CategorizedTicker> = Object.fromEntries(
+  TICKERS.map((t) => [t.symbol, t])
+);
